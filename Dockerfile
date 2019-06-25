@@ -17,12 +17,7 @@ RUN apt-get update && apt-get install -y \
 
 # Download and extract binary to /usr/bin
 
-RUN wget $url
-
-
-
-RUN mv gemma-0.98.1-linux-static /usr/bin/gemma
-RUN chmod +x /usr/bin/gemma
+RUN wget $url && gunzip gemma-0.98.1-linux-static.gz && mv gemma-0.98.1-linux-static /usr/bin/gemma &&  chmod +x /usr/bin/gemma
 
 RUN wget http://s3.amazonaws.com/plink1-assets/$plinksrc && \
     unzip $plinksrc -d /usr/bin/
