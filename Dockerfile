@@ -12,7 +12,7 @@ ENV plinksrc "plink_linux_x86_64_20190617.zip"
 
 # Install the packages needed to download and extract plink
 RUN apt-get update && apt-get install -y \
-    wget unzip \
+    wget unzip python3\
     gzip
 
 # Download and extract binary to /usr/bin
